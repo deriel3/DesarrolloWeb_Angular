@@ -1,0 +1,18 @@
+<nav class="navbar navbar-light bg-light">
+  <span class="navbar-brand mb-0 h1">Tiendita</span>
+  <ul class="nav justify-content-end ">
+    <li class="nav-item">
+      <a class="nav-link active" href="#"><i class="fab fa-buromobelexperte text-muted"></i></a>
+    </li>
+    <li class="nav-item">
+      <a *ngIf="!compras" [routerLink]="['/carrito']" class="nav-link" href="#"><i class="fas fa-shopping-cart text-muted"></i></a>
+      <a *ngIf="compras" [routerLink]="['/carrito']" class="nav-link" href="#"><i class="fas fa-shopping-cart text-danger"></i></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#"><i class="fas fa-envelope-open-text text-muted"></i></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#"><i class="fas fa-sign-in-alt text-muted"></i></a>
+    </li>
+  </ul>
+</nav>

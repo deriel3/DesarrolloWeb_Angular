@@ -1,0 +1,121 @@
+<div class="bg-light text-dark">
+  <div class="row">
+    <div class="col-md-4 " style="margin:10px">
+      <h2>Catalogo de Productos</h2>
+    </div>
+    <div class="col-md-4 " style="margin-left:30%; margin-top:10px; margin-bottom:10px">
+      <h4>¿Que estas buscando?</h4>
+      <input type="text" name="" [(ngModel)]="searchText" placeholder="Buscar Producto" class="form-control" value="">
+    </div>
+  </div>
+  <hr class="bg-white" />
+  <div class=""style="overflow: scroll;overflow-x: hidden;
+    height:600px; margin:5px">
+    <div class="">
+      <div class="row">
+        <div class="col-md-3" style="margin-top:15px" *ngFor="let fil of primera | filtro : searchText">
+          <div class="card">
+            <img class="card-img-top" src="../assets/images/{{fil.nombre|lowercase}}.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">{{fil.nombre}}</h5>
+              <p class="card-text">Precio:${{fil.precio}}</p>
+              <p class="card-text">Unidades:{{fil.unidades}}</p>
+              <div class="row">
+                <div class="col-md-4">
+                  <a [routerLink]="['/producto']" [queryParams]="{nombre:fil.nombre,precio:fil.precio,unidades:fil.unidades}" class="btn btn-primary" name="button">Ver</a>
+                </div>
+                <div class="col-md-8">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <button type="button" (click)="anadircarrito(fil.nombre,fil.precio,cant.value)" class="btn btn-warning" name="button">Añadir</button>
+                    </div>
+                    <div class="col-md-6">
+                      <input type="number"  class="form-control" style="width:60px" name="" value="1" #cant>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3" style="margin-top:15px" *ngFor="let fil of segunda | filtro : searchText">
+          <div class="card">
+            <img class="card-img-top" src="../assets/images/{{fil.nombre|lowercase}}.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">{{fil.nombre}}</h5>
+              <p class="card-text">Precio:${{fil.precio}}</p>
+              <p class="card-text">Unidades:{{fil.unidades}}</p>
+              <div class="row">
+                <div class="col-md-4">
+                  <a [routerLink]="['/producto']" [queryParams]="{nombre:fil.nombre,precio:fil.precio,unidades:fil.unidades}" class="btn btn-primary" name="button">Ver</a>
+                </div>
+                <div class="col-md-8">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <button type="button" class="btn btn-warning" name="button">Añadir</button>
+                    </div>
+                    <div class="col-md-6">
+                      <input type="number"  class="form-control" style="width:60px" name="" value="1">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3" style="margin-top:15px" *ngFor="let fil of tercera | filtro : searchText">
+          <div class="card">
+            <img class="card-img-top" src="../assets/images/{{fil.nombre|lowercase}}.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">{{fil.nombre}}</h5>
+              <p class="card-text">Precio:${{fil.precio}}</p>
+              <p class="card-text">Unidades:{{fil.unidades}}</p>
+              <div class="row">
+                <div class="col-md-4">
+                    <a [routerLink]="['/producto']" [queryParams]="{nombre:fil.nombre,precio:fil.precio,unidades:fil.unidades}" class="btn btn-primary" name="button">Ver</a>
+                </div>
+                <div class="col-md-8">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <button type="button" class="btn btn-warning" name="button">Añadir</button>
+                    </div>
+                    <div class="col-md-6">
+                      <input type="number"  class="form-control" style="width:60px" name="" value="1">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3" style="margin-top:15px" *ngFor="let fil of cuarta | filtro : searchText">
+          <div class="card">
+            <img class="card-img-top" src="../assets/images/{{fil.nombre|lowercase}}.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">{{fil.nombre}}</h5>
+              <p class="card-text">Precio:${{fil.precio}}</p>
+              <p class="card-text">Unidades:{{fil.unidades}}</p>
+              <div class="row">
+                <div class="col-md-4">
+                    <a [routerLink]="['/producto']" [queryParams]="{nombre:fil.nombre,precio:fil.precio,unidades:fil.unidades}" class="btn btn-primary" name="button">Ver</a>
+                </div>
+                <div class="col-md-8">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <button type="button" class="btn btn-warning" name="button">Añadir</button>
+                    </div>
+                    <div class="col-md-6">
+                      <input type="number"  class="form-control" style="width:60px" name="" value="1">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br>
+</div>

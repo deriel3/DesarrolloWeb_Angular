@@ -1,0 +1,27 @@
+<div class="fondo">
+  <div class="container">
+    <app-barra #child1></app-barra>
+    <br>
+    <div class="bg-light text-dark">
+      <div class="row">
+        <div class="col-md-4 " style="margin:10px">
+          <h2>{{nombre}}</h2>
+        </div>
+      </div>
+      <hr class="bg-white" />
+      <div class="" style="margin:20px">
+        <div class="row">
+          <div class="col-md-8">
+            <img src="../assets/images/{{nombre|lowercase}}.jpg" alt="">
+          </div>
+          <div class="col-md-4">
+            <p>Precio:{{precio}}</p>
+            <p>Unidades Disponibles:{{cantidad}}</p>
+          </div>
+        </div>
+      </div>
+      <a [routerLink]="['/home']" class="btn btn-light" style="margin:20px; border:1px solid">Atras</a>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="fondo">
+
+<div class="row align-items-center justify-content-center" style="margin-top:15%">
+  <div class="col-md-2 col-md-offset-5">
+    <h2 class="text-center">Inicio de Sesion</h2>
+    <form [formGroup]="login" (ngSubmit)="enviarform(us.value,cont.value)">
+      <div class="form-group">
+        <label for="usr">Usuario:</label>
+        <input type="text" class="form-control" #us  formControlName="usuario">
+      </div>
+      <div class="form-group">
+        <label for="pwd">Contrasena:</label>
+        <input type="password" class="form-control" #cont formControlName="pass">
+        <label class="text-warning" *ngIf="!init">Usuario o Contraseña incorrecta </label>
+      </div>
+      <button type="submit"  class="btn btn-success" [disabled]="!login.valid">Ingresar</button>
+    </form>
+  </div>
+</div>
+
+</div>

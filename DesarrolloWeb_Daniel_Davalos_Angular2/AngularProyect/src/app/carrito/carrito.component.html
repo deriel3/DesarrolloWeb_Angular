@@ -1,0 +1,41 @@
+<div class="fondo">
+  <div class="container">
+    <app-barra #child1></app-barra>
+    <br>
+    <div class="bg-light text-dark">
+      <div class="row">
+        <div class="col-md-4 " style="margin:10px">
+          <h2>Carrito de Compras</h2>
+        </div>
+      </div>
+      <hr class="bg-white" />
+      <div class="" style="margin:20px">
+        <div class="row" style="margin:5px">
+          <div class="col-md-7">
+            <ul class="list-group" *ngFor="let fil of compras">
+              <li class="list-group-item">
+                <div class="row">
+                  <div class="col-md-4">
+                    <img src="../assets/images/{{fil.nombre|lowercase}}.jpg" width="100%" alt="">
+                  </div>
+                  <div class="col-md-8">
+                    <h3>{{fil.nombre}}</h3>
+                    <h3>Unidades:{{fil.cantidad}}</h3>
+                  </div>
+                  <h3>Subtotal:${{fil.precio*fil.cantidad}}</h3>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-5">
+            <h1>Total:${{total}}</h1>
+            <a (click)="cancelar()"  class="btn btn-light" style="border:1px solid">Cancelar</a>
+            <a (click)="pagar()" class="btn btn-light" style="border:1px solid">Pagar</a>
+          </div>
+        </div>
+      </div>
+      <br>
+    </div>
+
+  </div>
+</div>
